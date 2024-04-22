@@ -1,0 +1,154 @@
+.container {
+  background: rgb(4, 33, 56);
+  background: linear-gradient(
+    132deg,
+    rgba(4, 33, 56, 1) 36%,
+    rgba(2, 141, 255, 1) 96%
+  );
+  width: 100%;
+  height: 270px;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container h2 {
+  width: 30%;
+  font-size: 30px;
+}
+
+img{
+  width: 110px;
+  height: 150px;
+  margin-top: 20px;
+}
+
+.livros{
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  padding: 2%;
+  margin-top: 100px;
+  background-color: rgb(245, 245, 245);
+  flex-wrap: wrap;
+}
+
+.pesquisa-container{
+  width: 100%;
+  height: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  background-color: rgba(2, 141, 255, 1);
+}
+
+input[type="text"]{
+  width: 30%;
+  height: 35px;
+  border-radius: 5px;
+  padding: 0 5px;
+  outline: none;
+  border: 0;
+  background-color: rgb(241, 241, 241);
+}
+
+.box{
+  width: 17%;
+  margin: 15px 55px;
+  height: 353px;
+  border-radius: 3px;
+  text-align: center;
+  padding: 0px 2%;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.box h2{
+  font-size: 15px;
+  margin-top: 10px;
+  line-height: 15px;
+  font-weight: bold;
+}
+
+.box h3{
+  font-size: 13px;
+  line-height: 15px;
+  font-weight: 200;
+}
+
+.btn-download{
+  margin-bottom: 20px;
+  width: 100%;
+  height: 35px;
+  border-radius: 5px;
+  border: 0;
+  background-color: rgba(2, 141, 255, 1);
+  color: white;
+  cursor: pointer;
+}
+
+.not-found{
+  text-align: center;
+  margin-top: 15px;
+}
+
+a{
+  color: red;
+}
+
+.btn-pesquisar{
+  width: 50px;
+  border: 0;
+  cursor: pointer;
+  background-color: rgba(2, 141, 255, 1);
+  text-transform: uppercase;
+  color: white;
+}
+
+.acervo{
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.acervo h2{
+  width: 30%;
+}
+
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo com transparência */
+  z-index: 9999; /* Garante que a animação fique sempre na frente de outros elementos */
+}
+
+.loader {
+  margin-top: 30px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 8px solid #f3f3f3; /* Cinza claro */
+  border-top: 8px solid #3498db; /* Azul */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite; /* Animação de rotação */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

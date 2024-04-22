@@ -1,0 +1,51 @@
+footer {
+  background: rgb(4, 33, 56);
+  background: linear-gradient(
+    132deg,
+    rgba(4, 33, 56, 1) 36%,
+    rgba(2, 141, 255, 1) 96%
+  );
+  padding: 2% 0;
+  height: 100%;
+  margin-top: 150px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(2, 141, 255);
+}
+
+.active {
+  color: rgb(0, 0, 0);
+}
+
+.line {
+  background-color: white;
+  width: 90%;
+  height: 1px;
+  position: relative;
+  left: 4%;
+  margin-top: 30px;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+}
+
+.copyright p {
+  font-weight: 200;
+}

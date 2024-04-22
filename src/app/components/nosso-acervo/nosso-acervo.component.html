@@ -1,0 +1,56 @@
+<div class="container">
+  <h2>Bem-vindo ao nosso acervo da tecnologia</h2>
+</div>
+
+<div class="acervo">
+  <h2>
+    "Fique à vontade para procurar o seu livro em nosso acervo. Bons estudos."
+  </h2>
+</div>
+
+<div class="pesquisa-container">
+  <input
+    type="text"
+    [(ngModel)]="termoPesquisa"
+    placeholder="Busque pelo título do livro"
+    (input)="pesquisarLivros()"
+    [matAutocomplete]="auto"
+    [value]="termoPesquisa"
+  />
+
+  <mat-autocomplete
+    #auto="matAutocomplete"
+    [displayWith]="exibirNomeLivro"
+    (optionSelected)="selecionarSugestao($event)"
+  >
+    <mat-option *ngFor="let livro of resultados" [value]="livro">
+      {{ livro.nomeLivro }}
+    </mat-option>
+  </mat-autocomplete>
+
+  <button (click)="pesquisarLivros()" class="btn-pesquisar">
+    <mat-icon>search</mat-icon>
+  </button>
+</div>
+
+<div *ngIf="resultados.length > 0" class="livros" #livrosContainer>
+  <div class="box" *ngFor="let livro of resultados.slice(0, quantidadeExibida)">
+    <img [src]="livro.imgLivro" [alt]="livro.nomeLivro" />
+    <h2>{{ livro.nomeLivro }}</h2>
+    <h3>{{ livro.nomeAutor }}</h3>
+    <button class="btn-download" (click)="acessarLivro(livro.id)">
+      Acessar
+    </button>
+  </div>
+</div>
+
+<div *ngIf="resultados.length > quantidadeExibida">
+  <div class="loader"></div>
+</div>
+
+<div *ngIf="erroLivroNaoEncontrado" class="not-found">
+  <p>
+    Nenhum resultado encontrado para "<a>{{ termoPesquisa }}</a
+    >"
+  </p>
+</div>
