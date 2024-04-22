@@ -1,0 +1,109 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  padding: 10px 0;
+  overflow-x: hidden;
+}
+
+.background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://m.media-amazon.com/images/I/61AC8UG-CPL._AC_UF1000,1000_QL80_.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(253, 93, 0, 0.5);
+}
+
+.back{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 15%;
+  top: 50%;
+  transform: translateY(150%);
+}
+
+a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  color: black;
+  transition: 0.5s all;
+}
+
+a:hover{
+  color: rgba(2, 141, 255, 1);
+}
+
+.bg-img img{
+  position: relative;
+  margin: 50px 0;
+  left: 45%;
+  width: 45%;
+}
+
+.flex{
+  display: flex;
+}
+
+
+.bg-img{
+  width: 34%;
+}
+
+.info-book{
+  width: 50%;
+}
+
+.info-book, .back {
+  position: relative;
+  z-index: 1;
+}
+
+
+.info-book h2{
+  margin-top: 70px;
+  font-size: 41px;
+  line-height: 39px;
+}
+
+.line{
+  background-color: white;
+  width: 100%;
+  height: 2px;
+}
+
+button{
+  width: 200px;
+  height: 35px;
+  margin-top: 20px;
+  border-radius: 3px;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 0;
+  background-color: rgba(2, 141, 255, 1);
+  transition: 0.9s all;
+}
+
+button:hover{
+  background-color: darken(rgba(2, 141, 255, 1), $amount: 20);
+}
+
+
