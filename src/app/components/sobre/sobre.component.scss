@@ -54,3 +54,49 @@ a{
   top: 20%;
   width: 80%;
 }
+
+@media screen and (max-width: 1045px) {
+  .container {
+    padding: 0 2%;
+  }
+
+  .container h2 {
+    width: 100%;
+    font-size: 30px;
+  }
+
+  .sobre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    padding: 0 2%;
+    width: 100%;
+  }
+
+  .box1{
+    position: relative;
+    left: 0;
+    width: 100%;
+    padding: 0 2%;
+  }
+
+  .box1 h2{
+    position: relative;
+    top: 0;
+    width: 100%;
+    font-size: 30px;
+  }
+
+  .box2{
+    width: 100%;
+  }
+
+  .box2 p{
+    position: relative;
+    top: 0;
+    padding: 0 2%;
+    width: 100%;
+  }
+}

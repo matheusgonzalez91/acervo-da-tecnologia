@@ -3,19 +3,17 @@
 </div>
 
 <div class="acervo">
-  <h2>
-    "Fique à vontade para procurar o seu livro em nosso acervo. Bons estudos."
-  </h2>
+  <h2>Fique à vontade para procurar o seu livro em nosso acervo. Bons estudos.</h2>
 </div>
 
 <div class="pesquisa-container">
   <input
     type="text"
     [(ngModel)]="termoPesquisa"
+    id="termoPesquisa"
     placeholder="Busque pelo título do livro"
     (input)="pesquisarLivros()"
     [matAutocomplete]="auto"
-    [value]="termoPesquisa"
   />
 
   <mat-autocomplete
@@ -31,26 +29,28 @@
   <button (click)="pesquisarLivros()" class="btn-pesquisar">
     <mat-icon>search</mat-icon>
   </button>
-</div>
 
-<div *ngIf="resultados.length > 0" class="livros" #livrosContainer>
-  <div class="box" *ngFor="let livro of resultados.slice(0, quantidadeExibida)">
-    <img [src]="livro.imgLivro" [alt]="livro.nomeLivro" />
-    <h2>{{ livro.nomeLivro }}</h2>
-    <h3>{{ livro.nomeAutor }}</h3>
-    <button class="btn-download" (click)="acessarLivro(livro.id)">
-      Acessar
-    </button>
+  <div class="categoria-container">
+    <select name="categoria" id="categoria" [(ngModel)]="categoriaSelecionada" (change)="filtrarPorCategoria()">
+      <option *ngIf="!selecaoRealizada" value="">Categoria</option>
+      <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
+    </select>
   </div>
 </div>
 
-<div *ngIf="resultados.length > quantidadeExibida">
+<div *ngIf="resultados && resultados.length > 0" class="livros" #livrosContainer>
+  <div class="box" *ngFor="let livro of resultados.slice(0, quantidadeExibida)">
+    <img [src]="livro.imgLivro" [alt]="livro.nomeLivro + ' capa'" />
+    <h2>{{ livro.nomeLivro }}</h2>
+    <h3>{{ livro.nomeAutor }}</h3>
+    <a [href]="livro.livroUrlDownload" target="_blank"><button class="btn-download">Baixar</button></a>
+  </div>
+</div>
+
+<div *ngIf="resultados && resultados.length > quantidadeExibida">
   <div class="loader"></div>
 </div>
 
 <div *ngIf="erroLivroNaoEncontrado" class="not-found">
-  <p>
-    Nenhum resultado encontrado para "<a>{{ termoPesquisa }}</a
-    >"
-  </p>
+  <p>Nenhum resultado encontrado para "<a>{{ termoPesquisa }}</a>"</p>
 </div>

@@ -11,6 +11,7 @@ import { LivroService } from '../livro.service';
 export class NossoAcervoComponent implements OnInit, OnDestroy {
   termoPesquisa: string = '';
   resultados: any[] = [];
+  categoriaSelecionada: string = '';
   livrosSugeridos: any[] = [];
   erroLivroNaoEncontrado: boolean = false;
   quantidadeExibida: number = 6; // Número de itens inicialmente exibidos
@@ -89,6 +90,23 @@ export class NossoAcervoComponent implements OnInit, OnDestroy {
     }
   }
 
+  filtrarPorCategoria() {
+    if (this.categoriaSelecionada.trim() !== '') {
+      this.livroService.getLivrosByCategoria(this.categoriaSelecionada).subscribe(
+        (resultados) => {
+          this.resultados = resultados;
+          this.erroLivroNaoEncontrado = resultados.length === 0;
+        },
+        (error) => {
+          console.error('Erro ao filtrar livros por categoria:', error);
+          // Trate o erro conforme necessário
+        }
+      );
+    } else {
+      this.carregarTodosLivros();
+    }
+  }
+
   onInputChange() {
     if (this.termoPesquisa.trim() === '') {
       this.carregarTodosLivros();
@@ -132,4 +150,10 @@ export class NossoAcervoComponent implements OnInit, OnDestroy {
     this.pesquisarLivros(); // Realiza a pesquisa
   }
 
+  categorias: string[] = ["Linguagens de Programação", "Segurança", "Banco de Dados", "Redes", "Hacking"];
+  selecaoRealizada: boolean = false;
+
+  exibirCategorias(): void {
+    this.selecaoRealizada = true;
+  }
 }

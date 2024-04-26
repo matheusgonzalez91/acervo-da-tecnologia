@@ -10,6 +10,10 @@ footer {
   margin-top: 150px;
 }
 
+.logo img{
+  width: 100%;
+}
+
 .footer-container {
   display: flex;
   justify-content: space-around;
@@ -48,4 +52,29 @@ a {
 
 .copyright p {
   font-weight: 200;
+}
+
+@media screen and (max-width: 1045px) {
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+
+  a {
+    text-decoration: none;
+    color: rgb(2, 141, 255);
+    padding: 0 10px;
+  }
+
 }

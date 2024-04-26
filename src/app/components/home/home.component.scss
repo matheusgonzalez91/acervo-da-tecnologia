@@ -21,7 +21,7 @@
 
 .info-home h2 {
   line-height: 40px;
-  font-size: 2.5rem;
+  font-size: 2.5rem; /* Tamanho da fonte responsivo */
 }
 
 button {
@@ -43,18 +43,18 @@ button {
   margin-top: 70px;
 }
 
-.box{
+.box {
   width: 50%;
 }
 
-.box h2{
+.box h2 {
   position: relative;
-  font-size: 25px;
+  font-size: 25px; /* Tamanho da fonte responsivo */
   left: 30%;
   width: 50%;
 }
 
-.boxes{
+.boxes {
   position: relative;
   right: 5%;
   background-color: rgb(2, 141, 255);
@@ -66,49 +66,123 @@ button {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
-.boxes h2{
+.boxes h2 {
   position: relative;
   top: 30%;
   color: rgb(0, 183, 255);
-  font-size: 30px;
+  font-size: 30px; /* Tamanho da fonte responsivo */
 }
 
-.boxes h3{
+.boxes h3 {
   position: relative;
   top: 20%;
   color: white;
 }
 
-.info3{
+.info3 {
   margin-top: 150px;
   display: flex;
   justify-content: space-evenly;
 }
 
-.box-info1{
+.box-info1 {
   padding: 0 2%;
   width: 50%;
   position: relative;
   left: 7%;
 }
 
-.box-info1 img{
+.box-info1 img {
   width: 70%;
 }
 
-.box-info2{
+.box-info2 {
   padding: 0 2%;
   width: 50%;
 }
 
-.box-info2 h2{
+.box-info2 h2 {
   color: rgb(2, 141, 255);
-  font-size: 35px;
+  font-size: 35px; /* Tamanho da fonte responsivo */
 }
 
-.box-info2 p{
+.box-info2 p {
   width: 70%;
   font-weight: 200;
-  font-size: 20px;
+  font-size: 20px; /* Tamanho da fonte responsivo */
   line-height: 25.7px;
+}
+
+@media screen and (max-width: 1045px) {
+  .info-home {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    color: white;
+    text-align: center;
+  }
+
+  .info2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+  }
+
+  .box h2 {
+    position: relative;
+    font-size: 25px; /* Tamanho da fonte responsivo */
+    text-align: center;
+    margin-bottom: 50px;
+    left: 0%;
+    width: 100%;
+  }
+
+  .boxes {
+    position: relative;
+    right: 0;
+    background-color: rgb(2, 141, 255);
+    width: 250px;
+    height: 170px;
+    text-align: center;
+    border-radius: 100%;
+    margin: 20px 0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  }
+
+  .info3 {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box-info1 img {
+    position: relative;
+    left: -15%;
+    width: 100%;
+  }
+
+  .box-info2 {
+    text-align: center;
+    padding: 0 2%;
+    margin: 50px 0;
+    width: 100%;
+  }
+
+  .box-info2 h2 {
+    color: rgb(2, 141, 255);
+    font-size: 35px; /* Tamanho da fonte responsivo */
+  }
+
+  .box-info2 p {
+    width: 100%;
+    padding: 0 2%;
+    font-weight: 200;
+    font-size: 20px; /* Tamanho da fonte responsivo */
+    line-height: 25.7px;
+  }
 }

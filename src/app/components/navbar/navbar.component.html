@@ -2,18 +2,21 @@
   <div class="logo">
     <img src="../../../assets/logo.png" alt="Logo" />
   </div>
-  <ul>
-    <li>
-      <a routerLink="" routerLinkActive="active">Home</a>
-    </li>
-    <li>
-      <a routerLink="/sobre" routerLinkActive="active">Sobre</a>
-    </li>
-    <li>
-      <a routerLink="/recursos" routerLinkActive="active">Recursos</a>
-    </li>
-    <li>
-      <a routerLink="/nosso-acervo" routerLinkActive="active">Nosso Acervo</a>
-    </li>
+  <ul class="desktop-menu">
+    <li><a routerLink="" routerLinkActive="active">Home</a></li>
+    <li><a routerLink="/sobre" routerLinkActive="active">Sobre</a></li>
+    <li><a routerLink="/recursos" routerLinkActive="active">Recursos</a></li>
+    <li><a routerLink="/nosso-acervo" routerLinkActive="active">Nosso Acervo</a></li>
+  </ul>
+
+  <button mat-icon-button class="mobile-menu-button" (click)="toggleMenu()">
+    <mat-icon>{{ isMenuOpen ? "close" : "menu" }}</mat-icon>
+  </button>
+
+  <ul class="mobile-menu" [class.open]="isMenuOpen">
+    <li><a routerLink="" routerLinkActive="active">Home</a></li>
+    <li><a routerLink="/sobre" routerLinkActive="active">Sobre</a></li>
+    <li><a routerLink="/recursos" routerLinkActive="active">Recursos</a></li>
+    <li><a routerLink="/nosso-acervo" routerLinkActive="active">Nosso Acervo</a></li>
   </ul>
 </nav>
