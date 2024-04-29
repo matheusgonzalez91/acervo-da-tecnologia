@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class LivroService {
-  private apiUrl = 'http://localhost:8080/livros';
+  private apiUrl = 'https://acervotecnologia.onrender.com/livros';
 
   constructor(private http: HttpClient) {}
 
