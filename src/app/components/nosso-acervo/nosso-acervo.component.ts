@@ -150,7 +150,7 @@ export class NossoAcervoComponent implements OnInit, OnDestroy {
     this.pesquisarLivros(); // Realiza a pesquisa
   }
 
-  categorias: string[] = ["Linguagens de Programação", "Segurança", "Banco de Dados", "Redes", "Hacking"];
+  categorias: string[] = ["Programação", "Segurança", "Banco de Dados", "Redes", "Hacking"];
   selecaoRealizada: boolean = false;
 
   exibirCategorias(): void {
